@@ -1,0 +1,168 @@
+---
+title: "Lin's concordance correlation coefficient for measurements"
+subtitle: "Scaling of Cerebral blood flow rate and brain size- human ontogeny"
+author: "Prince Chikezie"
+date: "28 July 2017"
+output: html_document
+---
+## Intra-observer error trials 
+
+```{r Millet seed volume (ml) reproducability, echo}
+
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy 
+
+Millet_seed <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Millet seed/Millet seed.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+# run the test 
+lin_millet <- epi.ccc(Millet_seed$Measurement_1, Millet_seed$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print 
+lin_millet
+# ρc = 0.999
+```
+
+```{r Craniopioints Length (cm) reproducability, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy 
+CP_Length <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Craniopoints/CP_Length.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+# run the test
+lin_cranio_l <- epi.ccc(CP_Length$Measurement_1, CP_Length$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print 
+lin_cranio_l
+# ρc = 0.996
+```
+```{r Craniopioints Breadth (cm) reproducability, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+CP_Breadth <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Craniopoints/CP_Breadth.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+# run the test
+lin_cranio_b <- epi.ccc(CP_Breadth$Measurement_1, CP_Breadth$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_cranio_b
+# ρc = 0.999
+```
+
+```{r Craniopioints Height (cm) reproducability, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+CP_Height <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Craniopoints/CP_Height.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+# run the test
+lin_cranio_h <- epi.ccc(CP_Height$Measurement_1, CP_Height$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_cranio_h
+# ρc = 0.997
+```
+
+```{r Scale bar distance (cm) from carotid foramina_Left.proximal, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+Scale_L_proximal <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Scalebar_distance/Scale_L_proximal.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+# run the test
+lin_scale_l.prox <- epi.ccc(CP_Height$Measurement_1, CP_Height$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_scale_l.prox
+# ρc = 0.997
+```
+
+```{r Scale bar distance (cm) from carotid foramina_Left.distal, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+Scale_L_distal <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Scalebar_distance/Scale_L_distal.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+# run the test
+lin_scale_l.dist <- epi.ccc(CP_Height$Measurement_1, CP_Height$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_scale_l.dist
+# ρc = 0.997
+```
+
+```{r Scale bar distance (cm) from carotid foramina_Right.proximal, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+Scale_R_proximal <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Scalebar_distance/Scale_R_proximal.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+# run the test
+lin_scale_r.prox <- epi.ccc(CP_Height$Measurement_1, CP_Height$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_scale_r.prox
+# ρc = 0.997
+```
+
+```{r Scale bar distance (cm) from carotid foramina_Right.distal, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+Scale_R_distal <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Scalebar_distance/Scale_R_distal.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+lin_scale_r.dist <- epi.ccc(CP_Height$Measurement_1, CP_Height$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_scale_r.dist
+# ρc = 0.997
+```
+
+```{r Carotid foramen (CF) ellipse area (mm^2) left, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+CF_left_area <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Carotid foramen area/CF_left.area_mm2.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+lin_CF_left <- epi.ccc(CF_left_area$Measurement_1,
+                            CF_left_area$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_CF_left
+# ρc = 0.960
+```
+
+```{r Carotid foramen (CF) ellipse area (mm^2) right, echo}
+library(readxl)
+# Read scale data from local, and import into using read_excel to convert into a dataframe
+# Ensure the data is tidy
+CF_right_area <- read_excel("C:/Users/ifeoma/Google Drive/HONOURS/PROJECTS/ESSENTIAL INFO/Skull analysis/Data collection and Tests/Intraobserver trials/Carotid foramen area/CF_right.area_mm2.xlsx")
+
+# install and load package for running the Lin’s concordance correlation coefficient
+library(epiR)
+lin_CF_right <- epi.ccc(CF_right_area$Measurement_1,
+                            CF_right_area$Measurement_2,
+              ci = "z-transform", conf.level = 0.95)
+# print
+lin_CF_right
+# ρc = 0.960
+```
